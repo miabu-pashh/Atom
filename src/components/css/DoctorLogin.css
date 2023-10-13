@@ -1,0 +1,59 @@
+/* Login.css */
+
+.login-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* Two columns */
+    gap: 20px;
+    /* Gap between columns */
+    align-items: center;
+    /* Center vertically */
+    height: 100vh;
+    /* Full viewport height */
+    padding: 20px;
+    background-color: #008200;
+}
+
+.login-form {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 10px;
+    margin-left: 40px;
+    margin-top: 60px;
+}
+
+.login-form h2 {
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: green;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.login-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
