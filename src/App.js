@@ -1,9 +1,9 @@
 import logo from "./logo.svg";
 import "./App.css";
 import HomePage from "./components/HomePage";
-import ChatBot from "./components/ChatBot";
 import Routes from "./components/Routes";
 import NavBar from "./components/NavBar";
+import ChatBot from "./components/ChatBot";
 function App() {
   return (
     <div className="App">
@@ -11,7 +11,7 @@ function App() {
       {/* <Routes /> */}
       <NavBar />
       <Routes />
-
+      <ChatBot/>
       {/* Optionally, render the ChatBot component */}
       {/* <ChatBot /> */}
     </div>

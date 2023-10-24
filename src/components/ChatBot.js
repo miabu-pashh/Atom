@@ -1,45 +1,70 @@
-// src/components/ChatBot.js
-import React, { useState } from "react";
-import "./ChatBot.css";
+import React from 'react';
+import ChatBot from 'react-simple-chatbot';
+import { ThemeProvider } from 'styled-components';
 
-const ChatBot = () => {
-  const [messages, setMessages] = useState([]);
-  const [inputMessage, setInputMessage] = useState("");
+//import './App.css'; // Import your custom CSS for styling
 
-  const handleSendMessage = () => {
-    if (inputMessage.trim() === "") return;
+const steps = [
+  {
+    id: '0',
+    message: 'Hello there!',
+    trigger: '1',
+  },
+  {
+    id: '1',
+    message: 'May I know your name, please?',
+    trigger: '2',
+  },
+  {
+    id: '2',
+    user: true,
+    trigger: '3',
+  },
+  {
+    id: '3',
+    message: 'Hello {previousValue}! How can I assist you today?',
+    trigger: '4',
+  },
+  {
+    id: '4',
+    options: [
+      { value: 'healthInfo', label: 'Get Health Information' },
+      { value: 'findClinic', label: 'Find Nearest Clinic' },
+    ],
+  },
+];
 
-    // Add the user's message to the chat
-    setMessages([...messages, { text: inputMessage, user: "user" }]);
-    setInputMessage("");
-
-    // Simulate a response from the chatbot (you can replace this with your logic)
-    setTimeout(() => {
-      const response = "I'm just a basic chatbot.";
-      setMessages([...messages, { text: response, user: "bot" }]);
-    }, 1000);
-  };
-
-  return (
-    <div className="chat-bot-container">
-      <div className="chat-messages">
-        {messages.map((message, index) => (
-          <div key={index} className={`message ${message.user}`}>
-            {message.text}
-          </div>
-        ))}
-      </div>
-      <div className="input-container">
-        <input
-          type="text"
-          placeholder="Type your message..."
-          value={inputMessage}
-          onChange={(e) => setInputMessage(e.target.value)}
-        />
-        <button onClick={handleSendMessage}>Send</button>
-      </div>
-    </div>
-  );
+const theme = {
+  background: '#F5F5F5', // Background color
+  headerBgColor: '#197B22', // Header background color
+  headerFontColor: '#FFFFFF', // Header text color
+  botBubbleColor: '#0F3789', // Bot bubble background color
+  headerFontSize: '20px',
+  botFontColor: '#FFFFFF', // Bot text color
+  userBubbleColor: '#FF5733', // User bubble background color
+  userFontColor: '#FFFFFF', // User text color
 };
 
-export default ChatBot;
+
+const config = {
+  //botAvatar: 'img.png',
+  floating: true,
+};
+
+
+function MyChatBot() {
+  return (
+    <div className="ChatBot">
+      <ThemeProvider theme={theme}>
+        <ChatBot
+          headerTitle="ChatBot"
+          steps={steps}
+          {...config}
+        />
+      </ThemeProvider>
+    </div>
+  );
+}
+
+
+export default MyChatBot;
