@@ -1,22 +1,109 @@
-/* ChatBotIcon.css */
-.chatbot-icon {
-    /* background-image: url('./chatbotImage.jpeg'); */
-    background-image: url("https: //images-platform.99static.com/4VNlmbLPzOCSHP8RB4bAwwohd0g=/0x0:1024x1024/500x500/top/smart/99designs-contests-attachments/91/91577/attachment_91577988");
-    position: fixed;
-    bottom: 40px;
-    right: 40px;
-    width: 80px;
-    height: 80px;
-    background-color: white;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-}
+/* styles.css */
 
-.chatbot-icon img {
-    width: 150%;
-    height: 150%;
-    object-fit: contain;
-}
+/* Container for the chatbot icon and window */
+.ChatbotContainer {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: flex-end;
+  }
+  
+  /* Chatbot icon styling */
+  .ChatbotIcon {
+    background-color: #0076FF; /* Blue button */
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    box-shadow: 0 4px 6px rgba(0, 118, 255, 0.2); /* Blue shadow */
+  }
+  
+  .ChatbotIcon.active {
+    background-color: #0056CC; /* Darker blue when active */
+    transform: scale(1.1);
+  }
+  
+  /* Chat window styling */
+  .ChatWindow {
+    position: absolute;
+    right: 0;
+    width: 300px;
+    border: 2px solid #0076FF; /* Blue window border */
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 118, 255, 0.2);
+    margin-top: 10px;
+    background-color: #E0F0FF; /* Light blue background */
+  }
+  
+  /* Chat message styling */
+  .ChatMessages {
+    padding: 10px;
+    max-height: 300px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align messages to the left */
+  }
+  
+  /* Styling for user and bot messages */
+  .user {
+    background-color: #66B8FF; /* Light blue user message */
+    color: white;
+    margin: 5px;
+    padding: 10px;
+    border-radius: 8px;
+    align-self: flex-end; /* User message on the right side */
+  }
+  
+  .bot {
+    background-color: #0076FF; /* Blue bot message */
+    color: white;
+    margin: 5px;
+    padding: 10px;
+    border-radius: 8px;
+    align-self: flex-start; /* Bot message on the left side */
+  }
+  
+  /* Input area styling */
+  .ChatInput {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    background-color: #E0F0FF; /* Light blue background */
+  }
+  
+  /* Input field styling */
+  input[type="text"] {
+    flex: 1;
+    padding: 8px;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    outline: none;
+    font-size: 14px;
+  }
+  
+  /* Send button styling */
+  button {
+    background-color: #0076FF; /* Blue send button */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 16px;
+    margin-left: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  button:hover {
+    background-color: #0056CC; /* Darker blue on hover */
+  }
+  
