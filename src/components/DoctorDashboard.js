@@ -40,6 +40,25 @@ function DoctorDashboard() {
     console.log("Submitted Answer:", answer);
   };
 
+  // Decorator function to add query details to a patient
+  const withQueryDetails = (patient) => {
+    return {
+      ...patient,
+      getQueryDetails: function () {
+        return this.queries.map((query) => query.question);
+      },
+    };
+  };
+
+  // Decorated patientsData with query details
+  const patientsDataWithQueryDetails = patientsData.map((patient) =>
+    withQueryDetails(patient)
+  );
+
+  // Usage
+  const selectedPatient1 = patientsDataWithQueryDetails[0];
+  console.log("Patient Name:", selectedPatient1.name);
+  console.log("Patient Queries:", selectedPatient1.getQueryDetails());
   return (
     <div>
       <div>
